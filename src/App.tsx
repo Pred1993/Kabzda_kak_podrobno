@@ -4,6 +4,7 @@ import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOf/OnOf";
 import UncontrolledInput from "./components/UncontrolledInput/UncontrolledInput";
+import ControlledSelect from "./components/ControlledSelect/ControlledSelect";
 
 export type ValueType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -13,6 +14,7 @@ function App() {
 
     return (
         <div className='App'>
+            <ControlledSelect/>
             <UncontrolledInput/>
             <Title title={'This is App component'}/>
             <Title title={'My friend'}/>
