@@ -1,27 +1,32 @@
-import React from "react";
+import React, {useReducer} from "react";
 import {ItemsType} from "../../App";
+import {reducer} from "./reducer";
 
 type AccordionPropsType = {
     title: string
-    collapsed: boolean
-    onChange: () => void
     items: Array<ItemsType>
     onClick: (value: any) => void
 }
 
-export const Accordion = (props: AccordionPropsType) => {
 
+export const UncontrolledAccordion = (props: AccordionPropsType) => {
+    let [state, dispatch] = useReducer(reducer, {collapsed: false})
     return (<div>
+            {/*<AccordionTitle title={props.title}*/}
+            {/*                onChange={() => setCollapsed(!collapsed)}*/}
+            {/*/>*/}
             <AccordionTitle title={props.title}
-                            onChange={props.onChange}
+                            onChange={() => {
+                                dispatch({type: 'TOGGLE-COLLAPSED'})}}
             />
-            {!props.collapsed && <AccordionBody items={props.items} onClick={props.onClick}/>}
+            {!state.collapsed && <AccordionBody items={props.items} onClick={props.onClick}/>}
         </div>
     )
 }
 type AccordionTitlePropsType = {
     title: string
     onChange: () => void
+
 }
 const AccordionTitle = (props: AccordionTitlePropsType) => {
     const onClickHandlerCollapsed = () => {
@@ -35,7 +40,7 @@ export type AccordionBodyPropsType = {
     items: Array<ItemsType>
     onClick: (value: any) => void
 }
-const AccordionBody = (props: AccordionBodyPropsType ) => {
+const AccordionBody = (props: AccordionBodyPropsType) => {
     return (
         <ul>
             {props.items.map((i, index) => <li onClick={() => props.onClick(i.value)} key={index}>{i.title}</li>)}
