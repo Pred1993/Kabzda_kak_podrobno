@@ -5,7 +5,7 @@ import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOf/OnOf";
 import Select from "./components/Select/Select";
 import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion";
-import UseMemoAndReactMemo from "./components/UseMemoAndReactMemo/UseMemoAndReactMemo";
+import {ExampleData} from "./components/UseEffeсt/UseEffect";
 
 
 export type ValueType = 0 | 1 | 2 | 3 | 4 | 5
@@ -61,7 +61,12 @@ function App() {
             {/*<UseMemo/>*/}
             <hr/>
             {/*<ReactMemo/>*/}
-            <UseMemoAndReactMemo/>
+            {/*<UseMemoAndReactMemo/>*/}
+            {/*<UseCallback/>*/}
+            {/*<UseState/>*/}
+            {/*<UseEffect/>*/}
+            {/*<UseEffect2/>*/}
+            <ExampleData/>
         </div>
     );
 }
