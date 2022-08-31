@@ -28,11 +28,14 @@ function App() {
     ]
 
     const onClickValue = (value: any) => {
-        debugger
         setValue(value)
     }
     const onChange = (important: number) => {
         setImportant(important)
+    }
+
+    const onChangeCollapsed = () => {
+        setCollapsed(!collapsed)
     }
     return (
         <div className='App'>
@@ -45,13 +48,13 @@ function App() {
             Article 1
             <Accordion title={'Menu'}
                        collapsed={collapsed}
-                       onChange={() => setCollapsed(!collapsed)}
+                       onChange={onChangeCollapsed}
                        items={items}
                        onClick={onClickValue}
             />
             <Accordion title={'Rest'}
                        collapsed={!collapsed}
-                       onChange={() => setCollapsed(!collapsed)}
+                       onChange={onChangeCollapsed}
                        items={items}
                        onClick={onClickValue}/>
             Article 2
