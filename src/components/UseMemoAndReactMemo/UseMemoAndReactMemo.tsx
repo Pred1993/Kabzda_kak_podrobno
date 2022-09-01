@@ -16,7 +16,7 @@ const Users = (props: {users: Array<string>}) => {
         </div>
     );
 };
-
+// Существует два синтаксиса React.memo: через контейнерную компоненту как в случае ниже и через оборачивание функции в memo() как проиллюстрировано в компоненте UseMemo
 const UsersContainer = React.memo(Users)
 const NewMessagesCounterContainer = React.memo(NewMessagesCounter)
 
@@ -24,7 +24,6 @@ const UseMemoAndReactMemo = () => {
     console.log('rerendering ReactMemo')
     const [counter, setCounter] = useState<number>(0)
     const [users, setUsers] = useState<Array<string>>(['alex', 'dima', 'artem', 'lena'])
-
     const newUsers = useMemo(() => {
      return users.filter(u => u.toLowerCase().indexOf('v') > -1)
     }, [users])

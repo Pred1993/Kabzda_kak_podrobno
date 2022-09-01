@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Accordion} from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
-import {OnOff} from "./components/OnOf/OnOf";
+import {Accordion} from "./components/AccordionAndUseReducer/Accordion";
 import Select from "./components/Select/Select";
-import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion";
-import {ExampleData} from "./components/UseEffeсt/UseEffect";
+import {UncontrolledAccordion} from "./components/AccordionAndUseReducer/UncontrolledAccordion";
+import UseMemo from "./components/UseMemo/UseMemo";
+import UseMemoAndReactMemo from "./components/UseMemoAndReactMemo/UseMemoAndReactMemo";
 
 
 export type ValueType = 0 | 1 | 2 | 3 | 4 | 5
@@ -58,18 +57,18 @@ function App() {
                        items={items}
                        onClick={onClickValue}/>
             Article 2
-            <Rating setValue={setValue} value={value}/>
-            <OnOff bulb={bulb} setBulb={setBulb}/>
+            {/*<Rating setValue={setValue} value={value}/>*/}
+            {/*<OnOff bulb={bulb} setBulb={setBulb}/>*/}
             <hr/>
-            {/*<UseMemo/>*/}
+            <UseMemo/>
             <hr/>
             {/*<ReactMemo/>*/}
-            {/*<UseMemoAndReactMemo/>*/}
+            <UseMemoAndReactMemo/>
             {/*<UseCallback/>*/}
             {/*<UseState/>*/}
             {/*<UseEffect/>*/}
             {/*<UseEffect2/>*/}
-            <ExampleData/>
+            {/*<ExampleData/>*/}
         </div>
     );
 }

@@ -25,8 +25,8 @@ const ReactMemo = () => {
     }
     return (
         <div>
-            <button onClick={() => setCounter(counter + 1)}>+</button>
-            <button onClick={onClickButtonHandler}>+</button>
+            <button onClick={() => setCounter(counter + 1)}>+ counter</button>
+            <button onClick={onClickButtonHandler}>+ users</button>
          <NewMessagesCounter count={counter}/>
          <Users users={users}/>
         </div>
