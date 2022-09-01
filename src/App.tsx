@@ -6,6 +6,7 @@ import {UncontrolledAccordion} from "./components/AccordionAndUseReducer/Uncontr
 import UseMemo from "./components/UseMemo/UseMemo";
 import UseMemoAndReactMemo from "./components/UseMemoAndReactMemo/UseMemoAndReactMemo";
 import UseCallback from "./components/UseCallback/UseCallback";
+import UseState from "./components/UseState/UseState";
 
 
 export type ValueType = 0 | 1 | 2 | 3 | 4 | 5
@@ -66,7 +67,7 @@ function App() {
             {/*<ReactMemo/>*/}
             <UseMemoAndReactMemo/>
             <UseCallback/>
-            {/*<UseState/>*/}
+            <UseState/>
             {/*<UseEffect/>*/}
             {/*<UseEffect2/>*/}
             {/*<ExampleData/>*/}
