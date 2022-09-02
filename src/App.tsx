@@ -7,6 +7,7 @@ import UseMemo from "./components/UseMemo/UseMemo";
 import UseMemoAndReactMemo from "./components/UseMemoAndReactMemo/UseMemoAndReactMemo";
 import UseCallback from "./components/UseCallback/UseCallback";
 import UseState from "./components/UseState/UseState";
+import {UseEffect, UseEffect2} from "./components/UseEffeсt/UseEffect";
 
 
 export type ValueType = 0 | 1 | 2 | 3 | 4 | 5
@@ -65,11 +66,11 @@ function App() {
             <UseMemo/>
             <hr/>
             {/*<ReactMemo/>*/}
-            <UseMemoAndReactMemo/>
-            <UseCallback/>
-            <UseState/>
+            {/*<UseMemoAndReactMemo/>*/}
+            {/*<UseCallback/>*/}
+            {/*<UseState/>*/}
             {/*<UseEffect/>*/}
-            {/*<UseEffect2/>*/}
+            <UseEffect2/>
             {/*<ExampleData/>*/}
         </div>
     );
