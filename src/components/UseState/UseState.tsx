@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 function generateDate() {
-    // difficult counting
-    console.log('generateDate')
-    return 243243243242
+  // difficult counting
+  console.log('generateDate');
+  return 243243243242;
 }
 
 // При выполнении кода каждый ререндер компоненты UseState будет запускать сложную потенциально в вычислениях фуекцию generateDate, поэтому мы можем эту фуекцию вложить useCallback либо UseMemo, но вданном контексте мы используем навороченный UseState
@@ -24,18 +24,18 @@ function generateDate() {
 // export default UseState;
 // В UseState при вызове можно добавлять ссылку на функцию, return которой он дабавит в стейт. Пример ниже:
 const UseState = () => {
-    // const initValue = generateDate()
+  // const initValue = generateDate()
 
-    const [counter, setCounter] = useState<number>(generateDate)
-    const changer = (state: number) => {
-        return state + 1
-    }
-    return (
-        <div>
-            <button onClick={() => setCounter(changer)}>+</button>
-            {counter}
-        </div>
-    );
+  const [counter, setCounter] = useState<number>(generateDate);
+  const changer = (state: number) => {
+    return state + 1;
+  };
+  return (
+    <div>
+      <button onClick={() => setCounter(changer)}>+</button>
+      {counter}
+    </div>
+  );
 };
 
 export default UseState;
