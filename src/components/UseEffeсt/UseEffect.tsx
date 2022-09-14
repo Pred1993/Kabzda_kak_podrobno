@@ -110,16 +110,43 @@ export const ExampleData = ({mode}: ExampleDataPropsType) => {
 }
 
 
-export const UseEffect3 = () => {
+export const UseEffectCleanUp = () => {
     const [number, setNumber] = useState(1);
-    console.log('Component rendered');
+    console.log('Component rendered with ' + number);
+    // При наличии массива зависимостей каждый раз при изменении number будет срабатывать UseEffect, но сразу он будет убивать свой прошлый вызов: таким образом в консоли мы увидим 'Component rendered 2' затем 'Component death 1' и только потом 'Effect occurred 2'
     useEffect(() => {
-        console.log('UseEffect')
-    }, [])
+        console.log('Effect occurred ' + number)
+
+        return () => {
+            console.log('Component death ' + number)
+        }
+    }, [number])
     return (
         <>
             Hello, counter: {number}
             <button onClick={() => setNumber(number + 1)}>number</button>
+        </>
+    );
+};
+
+export const KeysTrackerExample = () => {
+    const [text, setText] = useState('');
+    console.log('Component rendered with ' + text);
+    useEffect(() => {
+        const handler = (e: KeyboardEvent) => {
+            console.log('adadad')
+            setText((state) => state + e.key)
+        }
+        window.document.addEventListener('keypress', handler)
+        return () => {
+            // отписка от события чтобы не накапливались обработчики
+            window.document.removeEventListener('keypress', handler)
+        }
+        }
+    , [])
+    return (
+        <>
+            Typed, text: {text}
         </>
     );
 };

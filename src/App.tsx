@@ -3,7 +3,7 @@ import './App.css';
 import {Accordion} from './components/AccordionAndUseReducer/Accordion';
 import Select from './components/Select/Select';
 import {UncontrolledAccordion} from './components/AccordionAndUseReducer/UncontrolledAccordion';
-import {UseEffect3} from './components/UseEffeсt/UseEffect';
+import {KeysTrackerExample, UseEffectCleanUp} from './components/UseEffeсt/UseEffect';
 
 export type ValueType = 0 | 1 | 2 | 3 | 4 | 5;
 export type ItemsType = {
@@ -69,7 +69,8 @@ function App() {
             {/*<UseEffect/>*/}
             {/*<UseEffect2 />*/}
             {/*<ExampleData/>*/}
-            <UseEffect3/>
+            {/*<UseEffectCleanUp/>*/}
+            <KeysTrackerExample/>
         </div>
     );
 }
