@@ -4,6 +4,7 @@ import {Accordion} from './components/AccordionAndUseReducer/Accordion';
 import Select from './components/Select/Select';
 import {UncontrolledAccordion} from './components/AccordionAndUseReducer/UncontrolledAccordion';
 import {KeysTrackerExample, UseEffectCleanUp} from './components/UseEffeсt/UseEffect';
+import SelectNew from "./components/Select/SelectNew";
 
 export type ValueType = 0 | 1 | 2 | 3 | 4 | 5;
 export type ItemsType = {
@@ -12,7 +13,7 @@ export type ItemsType = {
 };
 
 function App() {
-    const [important, setImportant] = useState<number>(4);
+    const [important, setImportant] = useState<number>(1);
     const [value, setValue] = useState<ValueType>(0);
     const [bulb, setBulb] = useState(true);
     const [collapsed, setCollapsed] = useState<boolean>(false);
@@ -40,37 +41,38 @@ function App() {
             {/*<UncontrolledInput/>*/}
             <UncontrolledAccordion title={'Menu'} items={items} onClick={onClickValue}/>
             <Select important={important} onChange={onChange} items={items}/>
-            <Title title={'This is App component'}/>
-            <Title title={'My friend'}/>
-            Article 1
-            <Accordion
-                title={'Menu'}
-                collapsed={collapsed}
-                onChange={onChangeCollapsed}
-                items={items}
-                onClick={onClickValue}
-            />
-            <Accordion
-                title={'Rest'}
-                collapsed={!collapsed}
-                onChange={onChangeCollapsed}
-                items={items}
-                onClick={onClickValue}
-            />
-            Article 2{/*<Rating setValue={setValue} value={value}/>*/}
-            {/*<OnOff bulb={bulb} setBulb={setBulb}/>*/}
-            <hr/>
-            {/*<UseMemo />*/}
-            <hr/>
-            {/*<ReactMemo/>*/}
-            {/*<UseMemoAndReactMemo/>*/}
-            {/*<UseCallback/>*/}
-            {/*<UseState/>*/}
-            {/*<UseEffect/>*/}
-            {/*<UseEffect2 />*/}
-            {/*<ExampleData/>*/}
-            {/*<UseEffectCleanUp/>*/}
-            <KeysTrackerExample/>
+            <SelectNew important={important} onChange={onChange} items={items}/>
+            {/*<Title title={'This is App component'}/>*/}
+            {/*<Title title={'My friend'}/>*/}
+            {/*Article 1*/}
+            {/*<Accordion*/}
+            {/*    title={'Menu'}*/}
+            {/*    collapsed={collapsed}*/}
+            {/*    onChange={onChangeCollapsed}*/}
+            {/*    items={items}*/}
+            {/*    onClick={onClickValue}*/}
+            {/*/>*/}
+            {/*<Accordion*/}
+            {/*    title={'Rest'}*/}
+            {/*    collapsed={!collapsed}*/}
+            {/*    onChange={onChangeCollapsed}*/}
+            {/*    items={items}*/}
+            {/*    onClick={onClickValue}*/}
+            {/*/>*/}
+            {/*Article 2/!*<Rating setValue={setValue} value={value}/>*!/*/}
+            {/*/!*<OnOff bulb={bulb} setBulb={setBulb}/>*!/*/}
+            {/*<hr/>*/}
+            {/*/!*<UseMemo />*!/*/}
+            {/*<hr/>*/}
+            {/*/!*<ReactMemo/>*!/*/}
+            {/*/!*<UseMemoAndReactMemo/>*!/*/}
+            {/*/!*<UseCallback/>*!/*/}
+            {/*/!*<UseState/>*!/*/}
+            {/*/!*<UseEffect/>*!/*/}
+            {/*/!*<UseEffect2 />*!/*/}
+            {/*/!*<ExampleData/>*!/*/}
+            {/*/!*<UseEffectCleanUp/>*!/*/}
+            {/*<KeysTrackerExample/>*/}
         </div>
     );
 }
